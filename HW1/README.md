@@ -16,7 +16,7 @@
 运行Musicdownloader.py,跟随软件的指引下载歌单。
 <h3>#Step 4 转换歌词格式</h3><br>
 将```transLyrics.py```置于歌曲文件夹中并运行，即可将```.lrc```格式的歌词转换为```.txt```。
-<h4>#Step 5 下载内嵌了专辑封面的歌曲</h3><br>
+<h3>#Step 5 下载内嵌了专辑封面的歌曲</h3><br>
 删除原有的已下载歌曲；通过命令行指令```pip install eyeD3``` 安装 eyeD3 库，再次运行Musicdownloader,下载内嵌了专辑封面的歌曲。
-<h4>#Step 6 提取专辑封面为png</h3><br>
+<h3>#Step 6 提取专辑封面为png</h3><br>
 将```extract.py```置于歌曲文件夹中并运行，即可提取mp3元数据中内置的专辑封面图片。
