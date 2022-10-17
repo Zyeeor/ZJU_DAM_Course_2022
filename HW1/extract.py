@@ -1,5 +1,3 @@
-from argparse import FileType
-from distutils.log import info
 import os
 import mutagen
 for filename in os.listdir('./'): 
