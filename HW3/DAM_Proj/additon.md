@@ -1,3 +1,0 @@
-With the basis of project template,I completed the two lists of likes and dislikes. I also added another page of musiclist and use a different way to gain a song's name and cover. Check what I've done in `DAMServer.py` . 
-
-But with time limit, I didn't complete a intro page or make the pages my own style and designing, which is originally on my to-do list. I'll finish it later and hand in the hw2 in a few days.
