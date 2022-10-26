@@ -1,6 +1,6 @@
 # Import the required classes and functions
 import os
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template
 import os.path
 import json
 try: 
@@ -39,6 +39,20 @@ def find(musiclist_name, name):
    path = os.path.join("./static/", musiclist_name, name)
    return path
 
+def loadJson(path):
+   text = open(path)
+   metadata = json.load(text)
+   return metadata
+
+def divideLyrics(lyrics):
+   a = ""
+   lines = []
+   for char in lyrics:
+      a = a + char
+      if char == '\n':
+         lines.append(a)
+         a = ""
+   return lines
 
 # Create a instance
 app = Flask(__name__)
@@ -64,10 +78,11 @@ def index2():
 
 @app.route('/<musiclist_name>.<name>')
 def index3(musiclist_name, name):
-   path = find(musiclist_name, name) + '.txt'
+   path = find(musiclist_name, name) + '.json'
    image = find(musiclist_name, name) + '.png'
-   text = open(path)
-   return render_template('information.html',music_name = name, Image = image, config = text)
+   metadata = loadJson(path)
+   lyrics = divideLyrics(metadata['lyrics'])
+   return render_template('information.html',music_name = name, Image = image, lyrics = lyrics)
 
 # Program entrance
 if __name__ == '__main__':
